@@ -1,7 +1,8 @@
-const hamburger = document.getElementById('hamburger') ;
+document.addEventListener('DOMContentLoaded', () => {
+    const navBar = document.getElementById('navBar');
+    const toggleIcon = document.getElementById('nav-toggle-icon');
 
-const nav_conten = document.getElementById('navconten');
-
-hamburger.addEventListener('click', () => {
-    nav_conten.classList.toggle('active');
-})
+    toggleIcon.addEventListener('click', () => {
+        navBar.classList.toggle('active'); // Toggle the active class
+    });
+});
