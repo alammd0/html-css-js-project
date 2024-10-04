@@ -124,7 +124,7 @@
 
 .hero_content_div {
 	display: flex;
-	justify-content:space-between;
+	justify-content: space-between;
 	gap: 90px;
 }
 
@@ -133,11 +133,9 @@
 }
 
 .video_container {
-    width: 50%;
-    display: block;
-  
+	width: 50%;
+	display: block;
 }
-
 
 .iphone-mask {
 	z-index: 10;
@@ -149,8 +147,8 @@
 	position: relative;
 	width: 100%;
 	overflow: hidden;
-	margin-left: auto; 
-    margin-right: 0;
+	margin-left: auto;
+	margin-right: 0;
 }
 
 .img-fluid {
@@ -161,42 +159,39 @@
 	transition: all 400ms ease-in 0s;
 }
 
-.video-wrap{
+.video-wrap {
 	vertical-align: baseline;
-    position: absolute;
-    height: 100%;
-    box-sizing: border-box;
-    top: -2px;
-    font: inherit;
-    padding: 18px;
-    overflow: hidden;
+	position: absolute;
+	height: 100%;
+	box-sizing: border-box;
+	top: -2px;
+	font: inherit;
+	padding: 18px;
+	overflow: hidden;
 }
-.video-wrap video{
+.video-wrap video {
 	transform-style: preserve-3d;
-    text-align: center;
-    height: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    background: white;
-    border-radius: 10px;
+	text-align: center;
+	height: 100%;
+	max-width: 100%;
+	margin: 0 auto;
+	background: white;
+	border-radius: 10px;
 }
 
-
-.hero_btton{
+.hero_btton {
 	display: flex;
 	gap: 60px;
 }
 
-
-.text_content{
+.text_content {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	margin-top: 6rem;
 }
 
-
-.hero_heading{
+.hero_heading {
 	width: 500px;
 	padding: 2rem 0;
 	color: white;
@@ -204,13 +199,13 @@
 	letter-spacing: 1.6;
 }
 
-.hero_paragraph{
+.hero_paragraph {
 	color: white;
 	letter-spacing: 1;
 	padding-bottom: 2rem;
 }
 
-.hero_paragraph p{
+.hero_paragraph p {
 	line-height: 1.75rem;
 }
 
@@ -228,9 +223,148 @@
 	font-weight: bold;
 	transition: 0.3s;
 	background-color: [object object];
-	background-image: radial-gradient(circle at 100% 0%, rgba(94, 138, 243, 1) 15%, rgba(243, 61, 223, 1));
+	background-image: radial-gradient(
+		circle at 100% 0%,
+		rgba(94, 138, 243, 1) 15%,
+		rgba(243, 61, 223, 1)
+	);
 }
 
-.hero_btton .down_btn:hover{
-	opacity: .5;
+.hero_btton .down_btn:hover {
+	opacity: 0.5;
+}
+
+
+/* 3 */
+
+.truth-container{
+	max-width: 1140px;
+	margin: 0 auto;
+	padding: 1.5rem;
+}
+.company_div{
+	display: flex;
+	margin: 12px;
+	gap: 20px;
+	align-items: center;
+	justify-content: center;
+}
+
+.img_com{
+	display: flex;
+	flex-direction: row;
+	height: 50px;
+}
+
+.pragraph_com p{
+	font-size: 1.5rem;
+	font-weight: 500;
+}
+
+/* 4 */
+
+.Com_container{
+	max-width: 1140px;
+	margin: 0 auto;
+	/* padding: 1.5rem; */
+	margin-top: 2rem;
+	margin-bottom: 2.75rem;
+}
+
+.comu_box{
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+}
+
+.comu_text{
+	text-align: center;
+	width: 800px;
+	margin: 0 auto;
+}
+
+.comu_text h2{
+	font-size: 1.75rem;
+	font-weight: 700;
+	letter-spacing: 2px;
+	padding: 3px;
+
+}
+
+.comu_text p{
+	font-size: 1.25rem;
+	padding-top: 1rem;
+	color: #636a6a;
+	line-height: 1.6;
+}
+
+.comu_sub_box{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 40px;
+	padding-top: 2rem;
+}
+
+.cumu_img_box {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 30px;
+	padding: 1.75rem;
+	transition: all 0.2s ease-out;
+    border-top: 4px solid;
+	transition-property: box-shadow, transform;
+	transition-duration: 350ms;
+	transition-timing-function: ease;
+	box-shadow: 2px 4px 6px 2px rgba(0, 0, 0, 0.24);
+}
+
+.cumu_img_box:is(:hover, :focus) {
+	box-shadow: 0px 8px 10px 1px rgba(0, 0, 0, 0.2);
+	transform: translateY(-9px);
+  }
+
+.cumu_img_box div img{
+	height: 120px;
+}
+
+.cumu_text_box{
+	text-align: center;
+	line-height: 1.6;
+}
+
+.box1{
+	border-top: 4px solid #960AB7;
+}
+
+.box2{
+	border-top: 4px solid #7202BB;
+}
+
+.box3{
+	border-top: 4px solid #3264F5;
+}
+
+.comu_btn{
+	display: flex;
+	gap: 10px;
+}
+
+.comu_btn button{
+	padding: 5px;
+	text-transform: uppercase;
+	border: 0.75px solid white;
+	border-radius: 4px;
+}
+
+.btn1{
+	background-color: #FFDCE5;
+	color: #FF164E;
+	font-size: 0.75rem;
+}
+.btn2{
+	background-color: #E0F5E9;
+	color: #62BF6D;
+	font-size: 0.75rem;
 }
