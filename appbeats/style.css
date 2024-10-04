@@ -234,15 +234,14 @@
 	opacity: 0.5;
 }
 
-
 /* 3 */
 
-.truth-container{
+.truth-container {
 	max-width: 1140px;
 	margin: 0 auto;
 	padding: 1.5rem;
 }
-.company_div{
+.company_div {
 	display: flex;
 	margin: 12px;
 	gap: 20px;
@@ -250,20 +249,20 @@
 	justify-content: center;
 }
 
-.img_com{
+.img_com {
 	display: flex;
 	flex-direction: row;
 	height: 50px;
 }
 
-.pragraph_com p{
+.pragraph_com p {
 	font-size: 1.5rem;
 	font-weight: 500;
 }
 
 /* 4 */
 
-.Com_container{
+.Com_container {
 	max-width: 1140px;
 	margin: 0 auto;
 	/* padding: 1.5rem; */
@@ -271,34 +270,33 @@
 	margin-bottom: 2.75rem;
 }
 
-.comu_box{
+.comu_box {
 	display: flex;
 	flex-direction: column;
 	gap: 40px;
 }
 
-.comu_text{
+.comu_text {
 	text-align: center;
 	width: 800px;
 	margin: 0 auto;
 }
 
-.comu_text h2{
+.comu_text h2 {
 	font-size: 1.75rem;
 	font-weight: 700;
 	letter-spacing: 2px;
 	padding: 3px;
-
 }
 
-.comu_text p{
+.comu_text p {
 	font-size: 1.25rem;
 	padding-top: 1rem;
 	color: #636a6a;
 	line-height: 1.6;
 }
 
-.comu_sub_box{
+.comu_sub_box {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -313,7 +311,7 @@
 	gap: 30px;
 	padding: 1.75rem;
 	transition: all 0.2s ease-out;
-    border-top: 4px solid;
+	border-top: 4px solid;
 	transition-property: box-shadow, transform;
 	transition-duration: 350ms;
 	transition-timing-function: ease;
@@ -323,48 +321,48 @@
 .cumu_img_box:is(:hover, :focus) {
 	box-shadow: 0px 8px 10px 1px rgba(0, 0, 0, 0.2);
 	transform: translateY(-9px);
-  }
+}
 
-.cumu_img_box div img{
+.cumu_img_box div img {
 	height: 120px;
 }
 
-.cumu_text_box{
+.cumu_text_box {
 	text-align: center;
 	line-height: 1.6;
 }
 
-.box1{
-	border-top: 4px solid #960AB7;
+.box1 {
+	border-top: 4px solid #960ab7;
 }
 
-.box2{
-	border-top: 4px solid #7202BB;
+.box2 {
+	border-top: 4px solid #7202bb;
 }
 
-.box3{
-	border-top: 4px solid #3264F5;
+.box3 {
+	border-top: 4px solid #3264f5;
 }
 
-.comu_btn{
+.comu_btn {
 	display: flex;
 	gap: 10px;
 }
 
-.comu_btn button{
+.comu_btn button {
 	padding: 5px;
 	text-transform: uppercase;
 	border: 0.75px solid white;
 	border-radius: 4px;
 }
 
-.btn1{
-	background-color: #FFDCE5;
-	color: #FF164E;
+.btn1 {
+	background-color: #ffdce5;
+	color: #ff164e;
 	font-size: 0.75rem;
 }
-.btn2{
-	background-color: #E0F5E9;
-	color: #62BF6D;
+.btn2 {
+	background-color: #e0f5e9;
+	color: #62bf6d;
 	font-size: 0.75rem;
 }
