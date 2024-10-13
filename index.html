@@ -1,13 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
+    <title>Navigation Menu with Content</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        .nav-container {
+            display: flex;
+            gap: 50px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .nav-item {
+            text-align: center;
+            cursor: pointer;
+            padding: 10px;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+        }
+
+        .nav-item p {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .icon {
+            font-size: 30px;
+            color: #888;
+        }
+
+        .nav-item:hover p,
+        .nav-item:hover .icon {
+            color: #673ab7;
+            /* Change to highlight color */
+        }
+
+        .nav-item.active p,
+        .nav-item.active .icon {
+            color: #673ab7;
+            /* Active state color */
+        }
+
+        .nav-item.active {
+            border-bottom: 3px solid #673ab7;
+        }
+
+        .content {
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-item {
+            display: none;
+            /* Hide all content by default */
+        }
+
+        .content-item.active {
+            display: block;
+            /* Show active content */
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div class="nav-container">
+        <div class="nav-item" onclick="selectItem(this, 'latestTechnology')">
+            <i class="icon">&#128736;</i>
+            <p>Latest Technology</p>
+        </div>
+        <div class="nav-item" onclick="selectItem(this, 'connectWifi')">
+            <i class="icon">&#128246;</i>
+            <p>Connect Wifi</p>
+        </div>
+        <div class="nav-item" onclick="selectItem(this, 'onlineShopping')">
+            <i class="icon">&#128722;</i>
+            <p>Online Shopping</p>
+        </div>
+        <div class="nav-item" onclick="selectItem(this, 'displayStore')">
+            <i class="icon">&#128176;</i>
+            <p>Display Store</p>
+        </div>
+    </div>
+
+    <div class="content">
+        <div id="latestTechnology" class="content-item active">Welcome to the latest technology section! Here you can
+            find updates on new gadgets and innovations.</div>
+        <div id="connectWifi" class="content-item">Learn how to connect to WiFi networks, troubleshoot issues, and
+            ensure a stable internet connection.</div>
+        <div id="onlineShopping" class="content-item">Explore online shopping tips, best practices, and how to find
+            great deals!</div>
+        <div id="displayStore" class="content-item">Check out our display store, featuring the latest products available
+            for purchase.</div>
+    </div>
+
+    <script>
+        // Select item function to highlight the selected navigation and show content
+        function selectItem(element, contentId) {
+            // Remove active class from all items
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            // Add active class to the clicked item
+            element.classList.add('active');
+
+            // Hide all content items
+            document.querySelectorAll('.content-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Show the corresponding content
+            document.getElementById(contentId).classList.add('active');
+
+            document.getElementById(contentId).classList.add('active');
+        }
+
+    </script>
 </body>
+
 </html>
