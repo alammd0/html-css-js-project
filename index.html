@@ -4,141 +4,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigation Menu with Content</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Slider Example</title>
+
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
+        /* Style the slider container */
+        .slider-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Slider to hold all the slides */
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        /* Each slide inside the slider */
+        .slide {
+            min-width: 100%;
             box-sizing: border-box;
         }
 
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 100vh;
-            background-color: #f5f5f5;
+        /* Image inside the slide */
+        .slide img {
+            width: 100%;
+            height: auto;
         }
 
-        .nav-container {
-            display: flex;
-            gap: 50px;
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-
-        .nav-item {
+        /* Dots to show the active slide */
+        .dots {
             text-align: center;
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 5px;
+            background-color: #bbb;
+            border-radius: 50%;
             cursor: pointer;
-            padding: 10px;
-            transition: color 0.3s ease, border-bottom 0.3s ease;
         }
 
-        .nav-item p {
-            margin-top: 10px;
-            font-size: 14px;
-            color: #333;
-        }
-
-        .icon {
-            font-size: 30px;
-            color: #888;
-        }
-
-        .nav-item:hover p,
-        .nav-item:hover .icon {
-            color: #673ab7;
-            /* Change to highlight color */
-        }
-
-        .nav-item.active p,
-        .nav-item.active .icon {
-            color: #673ab7;
-            /* Active state color */
-        }
-
-        .nav-item.active {
-            border-bottom: 3px solid #673ab7;
-        }
-
-        .content {
-            width: 80%;
-            max-width: 600px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .content-item {
-            display: none;
-            /* Hide all content by default */
-        }
-
-        .content-item.active {
-            display: block;
-            /* Show active content */
+        .dot.active {
+            background-color: #717171;
         }
     </style>
 </head>
 
 <body>
-    <div class="nav-container">
-        <div class="nav-item" onclick="selectItem(this, 'latestTechnology')">
-            <i class="icon">&#128736;</i>
-            <p>Latest Technology</p>
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <img src="image1.png" alt="Image 1">
+            </div>
+            <div class="slide">
+                <img src="image2.png" alt="Image 2">
+            </div>
+            <div class="slide">
+                <img src="image3.png" alt="Image 3">
+            </div>
+            <!-- Add more slides as needed -->
         </div>
-        <div class="nav-item" onclick="selectItem(this, 'connectWifi')">
-            <i class="icon">&#128246;</i>
-            <p>Connect Wifi</p>
+        <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <!-- Add dots for the number of slides -->
         </div>
-        <div class="nav-item" onclick="selectItem(this, 'onlineShopping')">
-            <i class="icon">&#128722;</i>
-            <p>Online Shopping</p>
-        </div>
-        <div class="nav-item" onclick="selectItem(this, 'displayStore')">
-            <i class="icon">&#128176;</i>
-            <p>Display Store</p>
-        </div>
-    </div>
-
-    <div class="content">
-        <div id="latestTechnology" class="content-item active">Welcome to the latest technology section! Here you can
-            find updates on new gadgets and innovations.</div>
-        <div id="connectWifi" class="content-item">Learn how to connect to WiFi networks, troubleshoot issues, and
-            ensure a stable internet connection.</div>
-        <div id="onlineShopping" class="content-item">Explore online shopping tips, best practices, and how to find
-            great deals!</div>
-        <div id="displayStore" class="content-item">Check out our display store, featuring the latest products available
-            for purchase.</div>
     </div>
 
     <script>
-        // Select item function to highlight the selected navigation and show content
-        function selectItem(element, contentId) {
-            // Remove active class from all items
-            document.querySelectorAll('.nav-item').forEach(item => {
-                item.classList.remove('active');
+
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlide(index) {
+            // Ensure the index is within bounds
+            if (index >= slides.length) {
+                slideIndex = 0;
+            } else if (index < 0) {
+                slideIndex = slides.length - 1;
+            } else {
+                slideIndex = index;
+            }
+
+            // Move the slider by changing the transform property
+            const slider = document.querySelector('.slider');
+            slider.style.transform = `translateX(${-slideIndex * 100}%)`;
+
+            // Update the dots
+            dots.forEach((dot, i) => {
+                if (i === slideIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
             });
-            // Add active class to the clicked item
-            element.classList.add('active');
-
-            // Hide all content items
-            document.querySelectorAll('.content-item').forEach(item => {
-                item.classList.remove('active');
-            });
-
-            // Show the corresponding content
-            document.getElementById(contentId).classList.add('active');
-
-            document.getElementById(contentId).classList.add('active');
         }
+
+        // Auto slide every 3 seconds
+        setInterval(() => {
+            showSlide(slideIndex + 1);
+        }, 3000);
+
+        // Allow dots to be clicked
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', () => {
+                showSlide(i);
+            });
+        });
 
     </script>
 </body>

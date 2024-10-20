@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-function selectAndchange(element, contentId){
+function selectAndchange(element, contentId) {
     // remove all active classes
     document.querySelectorAll('.tech-item').forEach(item => {
         item.classList.remove('active');
@@ -25,3 +25,31 @@ function selectAndchange(element, contentId){
     // add the new class on selected element
     document.getElementById(contentId).classList.add('active');
 }
+
+
+let btns = document.querySelectorAll(".accordion-title");
+
+btns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        const btnSibling = btn.nextElementSibling;
+
+        // First, close all open sections
+        btns.forEach((otherBtn) => {
+            if (otherBtn !== btn) {
+                otherBtn.classList.remove('active');
+                otherBtn.nextElementSibling.style.display = 'none';
+            }
+        });
+
+        btn.classList.toggle('active');
+
+        if (btn.classList.contains('active')) {
+            btnSibling.style.display = 'block';
+        } else {
+            btnSibling.style.display = 'none';
+        }
+
+        btn.classList.remove('active');
+
+    })
+})
